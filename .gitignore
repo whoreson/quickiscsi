@@ -1,0 +1,29 @@
+# CVS
+CVS/
+# NO_DOTALL
+
+# NFS/FreeBSD build artifacts
+.nfs*
+*.o
+*.a
+*.la
+*.so
+*.so.*
+Makefile.*
+*.bak
+*~
+*.swp
+*.*swp
+*.swo
+*.swo*
+
+# Editor backups
+*.orig
+*.rej
+
+# Build directories
+build/
+obj/
+
+# Generated headers with timestamp
+config.h.*
