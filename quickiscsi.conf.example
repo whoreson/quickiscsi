@@ -1,0 +1,72 @@
+; quickiscsi.conf -- example configuration file
+;
+; Lines starting with ; or # are comments.
+; Blank lines are ignored.
+; Sections are [global] or [target "name"].
+; Key = value pairs.  Leading/trailing whitespace is trimmed.
+;
+; Supported backends:
+;   file     -- regular file (created sparse if it doesn't exist)
+;   block    -- raw block device (POSIX only: /dev/sdX, /dev/rdiskN)
+;   ramdisk  -- volatile malloc'd RAM buffer (lost on exit)
+;
+; Size syntax: 512M  20G  1T  (K/M/G/T suffixes, or plain bytes)
+;
+; IQN names: any string is accepted.  Traditional format is
+; iqn.YYYY-MM.reverse.domain:identifier but we don't enforce it.
+; Use whatever you like.
+
+; --------------------------------------------------------------------------
+; Global settings (currently no options -- reserved for future use)
+; --------------------------------------------------------------------------
+[global]
+
+; --------------------------------------------------------------------------
+; A file-backed target.
+; The file is created sparse (lazy allocation) if it doesn't exist yet.
+; 'size' is only used when creating the file for the first time; after that,
+; the file's actual size is used.
+; --------------------------------------------------------------------------
+[target "data"]
+iqn     = iqn.homelab:data
+backend = file
+path    = /var/iscsi/data.img
+size    = 20G
+
+; --------------------------------------------------------------------------
+; A volatile ramdisk -- great for scratch space, test environments,
+; or fast temporary storage.  Contents are lost when quickiscsi exits.
+; --------------------------------------------------------------------------
+[target "ramdisk"]
+iqn     = iqn.homelab:ramdisk
+backend = ramdisk
+size    = 512M
+
+; --------------------------------------------------------------------------
+; A raw block device.  Be careful -- this gives direct access to the device.
+; POSIX only (Linux, macOS, BSD, etc.).
+; On Linux: path = /dev/sdb  (the whole disk, not a partition)
+; On macOS: path = /dev/rdisk2  (use rdisk for raw, unbuffered access)
+; --------------------------------------------------------------------------
+; [target "rawdisk"]
+; iqn     = iqn.homelab:rawdisk
+; backend = block
+; path    = /dev/sdb
+
+; --------------------------------------------------------------------------
+; Windows example (file backend):
+; --------------------------------------------------------------------------
+; [target "windata"]
+; iqn     = iqn.homelab:windata
+; backend = file
+; path    = C:\iscsi\windata.img
+; size    = 10G
+
+; --------------------------------------------------------------------------
+; Multiple targets are fine -- each gets its own IQN.
+; --------------------------------------------------------------------------
+; [target "backup"]
+; iqn     = iqn.homelab:backup
+; backend = file
+; path    = /var/iscsi/backup.img
+; size    = 500G

@@ -1,0 +1,742 @@
+backend: cannot open block device: /dev/sda
+config: target 'data': FAILED to open backend
+backend: /dev/disk0 opened read-only
+backend: /dev/disk0 size: 111 GB + 848781312 bytes
+config: target 'mac' [iqn.homelab:mac] -> /dev/disk0
+config: target 'ramdisk' [iqn.homelab:ramdisk] -> ramdisk(384MB)
+recv_pdu: opcode=0x03 flags=0x87 dsl=439 itt=0x00000000 cmdsn=0 statsn=0
+  BHS: 43 87 00 00  00 00 01 b7  00 02 3d 00  00 1d 00 00
+       00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+login: state=0 T=1 CSG=1 NSG=3 dsl=439
+handle_login: new session (TSIH=0), stat_sn=1773929503 (global counter); initiator ExpStatSN=0 (ignored -- Reserved for TSIH=0)
+login_parse_keys: CSG=1 dsl=439 keys from initiator:
+  [0] 'InitiatorName=iqn.1993-08.org.debian:01:8b30d657b2'
+  [51] 'InitiatorAlias=lenovo-g505'
+  [78] 'TargetName=iqn.homelab:ramdisk'
+  [109] 'SessionType=Normal'
+  [128] 'HeaderDigest=None'
+  [146] 'DataDigest=None'
+  [162] 'DefaultTime2Wait=2'
+  [181] 'DefaultTime2Retain=0'
+  [202] 'IFMarker=No'
+  [214] 'OFMarker=No'
+  [226] 'ErrorRecoveryLevel=0'
+  [247] 'InitialR2T=No'
+  [261] 'ImmediateData=Yes'
+  [279] 'MaxBurstLength=16776192'
+  [303] 'FirstBurstLength=262144'
+  [327] 'MaxOutstandingR2T=1'
+  [347] 'MaxConnections=1'
+  [364] 'DataPDUInOrder=Yes'
+  [383] 'DataSequenceInOrder=Yes'
+  [407] 'MaxRecvDataSegmentLength=262144'
+build_op_keys: advertising InitialR2T=Yes ImmediateData=No MaxRecvDataSegLen(ours)=65536 MaxBurst=262144 FirstBurst=65536 ERL=0
+login: complete (op->full), initiator='iqn.1993-08.org.debian:01:8b30d657b2' target='iqn.homelab:ramdisk'
+login_rsp: T=1 CSG=1 NSG=3 status=00:00 text_len=330 StatSN(wire)=1773929503 ExpCmdSN(wire)=0
+  BHS: 23 87 00 00  00 00 01 4a  00 02 3d 00  00 1d 12 00
+       00 00 00 00  00 00 00 00  69 bc 04 1f  00 00 00 00
+       00 00 00 1f  00 00 00 00  00 00 00 00  00 00 00 00
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x01000000 cmdsn=0 statsn=1773929504
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       01 00 00 00  00 00 00 24  00 00 00 00  69 bc 04 20
+       12 00 00 00  24 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=36 itt=0x01000000 cmd_sn=0 is_write=0 imm_len=0
+  CDB: 12 00 00 00 24 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY standard: alloc=36 lun=0 returning 36 bytes (devtype=0x00 peripheral_qualifier=0x00 version=0x05 response_fmt=0x02 addl_len=0x1f)
+send_data_in: itt=0x01000000 lun=0 data_sn=0 buf_offset=0 len=36 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929504
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x02000000 cmdsn=1 statsn=1773929505
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       02 00 00 00  00 00 00 04  00 00 00 01  69 bc 04 21
+       12 01 00 00  04 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=4 itt=0x02000000 cmd_sn=1 is_write=0 imm_len=0
+  CDB: 12 01 00 00 04 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY EVPD page=0x00 alloc=4 lun=0
+send_data_in: itt=0x02000000 lun=0 data_sn=0 buf_offset=0 len=4 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929505
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x03000000 cmdsn=2 statsn=1773929506
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       03 00 00 00  00 00 00 07  00 00 00 02  69 bc 04 22
+       12 01 00 00  07 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=7 itt=0x03000000 cmd_sn=2 is_write=0 imm_len=0
+  CDB: 12 01 00 00 07 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY EVPD page=0x00 alloc=7 lun=0
+send_data_in: itt=0x03000000 lun=0 data_sn=0 buf_offset=0 len=7 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929506
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x04000000 cmdsn=3 statsn=1773929507
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       04 00 00 00  00 00 00 04  00 00 00 03  69 bc 04 23
+       12 01 00 00  04 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=4 itt=0x04000000 cmd_sn=3 is_write=0 imm_len=0
+  CDB: 12 01 00 00 04 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY EVPD page=0x00 alloc=4 lun=0
+send_data_in: itt=0x04000000 lun=0 data_sn=0 buf_offset=0 len=4 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929507
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x05000000 cmdsn=4 statsn=1773929508
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       05 00 00 00  00 00 00 07  00 00 00 04  69 bc 04 24
+       12 01 00 00  07 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=7 itt=0x05000000 cmd_sn=4 is_write=0 imm_len=0
+  CDB: 12 01 00 00 07 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY EVPD page=0x00 alloc=7 lun=0
+send_data_in: itt=0x05000000 lun=0 data_sn=0 buf_offset=0 len=7 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929508
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x06000000 cmdsn=5 statsn=1773929509
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       06 00 00 00  00 00 00 04  00 00 00 05  69 bc 04 25
+       12 01 80 00  04 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=4 itt=0x06000000 cmd_sn=5 is_write=0 imm_len=0
+  CDB: 12 01 80 00 04 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY EVPD page=0x80 alloc=4 lun=0
+send_data_in: itt=0x06000000 lun=0 data_sn=0 buf_offset=0 len=4 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929509
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x07000000 cmdsn=6 statsn=1773929510
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       07 00 00 00  00 00 00 0c  00 00 00 06  69 bc 04 26
+       12 01 80 00  0c 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=12 itt=0x07000000 cmd_sn=6 is_write=0 imm_len=0
+  CDB: 12 01 80 00 0c 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY EVPD page=0x80 alloc=12 lun=0
+send_data_in: itt=0x07000000 lun=0 data_sn=0 buf_offset=0 len=12 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929510
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x08000000 cmdsn=7 statsn=1773929511
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       08 00 00 00  00 00 00 04  00 00 00 07  69 bc 04 27
+       12 01 83 00  04 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=4 itt=0x08000000 cmd_sn=7 is_write=0 imm_len=0
+  CDB: 12 01 83 00 04 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY EVPD page=0x83 alloc=4 lun=0
+send_data_in: itt=0x08000000 lun=0 data_sn=0 buf_offset=0 len=4 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929511
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x09000000 cmdsn=8 statsn=1773929512
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       09 00 00 00  00 00 00 33  00 00 00 08  69 bc 04 28
+       12 01 83 00  33 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=51 itt=0x09000000 cmd_sn=8 is_write=0 imm_len=0
+  CDB: 12 01 83 00 33 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY EVPD page=0x83 alloc=51 lun=0
+send_data_in: itt=0x09000000 lun=0 data_sn=0 buf_offset=0 len=51 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929512
+recv_pdu: opcode=0x01 flags=0x81 dsl=0 itt=0x0a000000 cmdsn=9 statsn=1773929513
+  BHS: 01 81 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       0a 00 00 00  00 00 00 00  00 00 00 09  69 bc 04 29
+       00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x00 lun=0 edtl=0 itt=0x0a000000 cmd_sn=9 is_write=0 imm_len=0
+  CDB: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_scsi_rsp: itt=0x0a000000 scsi_status=0x00 sense_len=0 residual=0 underflow=0 stat_sn=1773929513
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x0b000000 cmdsn=10 statsn=1773929513
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       0b 00 00 00  00 00 10 00  00 00 00 0a  69 bc 04 29
+       a0 00 00 00  00 00 00 00  10 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0xa0 lun=0 edtl=4096 itt=0x0b000000 cmd_sn=10 is_write=0 imm_len=0
+  CDB: a0 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  REPORT_LUNS: alloc=4096 returning len=16 (LUN list length=8 => 1 LUN: LUN 0)
+  buf: 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00
+send_data_in: itt=0x0b000000 lun=0 data_sn=0 buf_offset=0 len=16 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929514
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x0c000000 cmdsn=11 statsn=1773929514
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       0c 00 00 00  00 00 00 20  00 00 00 0b  69 bc 04 2a
+       9e 10 00 00  00 00 00 00  00 00 00 00  00 20 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x9e lun=0 edtl=32 itt=0x0c000000 cmd_sn=11 is_write=0 imm_len=0
+  CDB: 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  READ_CAPACITY_16: num_blocks=0:786432 last_lba=0:786431 block_size=512 alloc=32
+send_data_in: itt=0x0c000000 lun=0 data_sn=0 buf_offset=0 len=32 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929515
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x0d000000 cmdsn=12 statsn=1773929516
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       0d 00 00 00  00 00 00 04  00 00 00 0c  69 bc 04 2c
+       1a 00 3f 00  04 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x1a lun=0 edtl=4 itt=0x0d000000 cmd_sn=12 is_write=0 imm_len=0
+  CDB: 1a 00 3f 00 04 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x0d000000 lun=0 data_sn=0 buf_offset=0 len=4 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929516
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x0e000000 cmdsn=13 statsn=1773929517
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       0e 00 00 00  00 00 00 04  00 00 00 0d  69 bc 04 2d
+       1a 00 08 00  04 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x1a lun=0 edtl=4 itt=0x0e000000 cmd_sn=13 is_write=0 imm_len=0
+  CDB: 1a 00 08 00 04 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x0e000000 lun=0 data_sn=0 buf_offset=0 len=4 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929517
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x0f000000 cmdsn=14 statsn=1773929518
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       0f 00 00 00  00 00 00 0a  00 00 00 0e  69 bc 04 2e
+       a3 0c 01 12  00 00 00 00  00 0a 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0xa3 lun=0 edtl=10 itt=0x0f000000 cmd_sn=14 is_write=0 imm_len=0
+  CDB: a3 0c 01 12 00 00 00 00 00 0a 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+session: unsupported SCSI opcode 0xa3
+send_scsi_rsp: itt=0x0f000000 scsi_status=0x02 sense_len=18 residual=0 underflow=0 stat_sn=1773929518
+recv_pdu: opcode=0x01 flags=0x81 dsl=0 itt=0x10000000 cmdsn=15 statsn=1773929519
+  BHS: 01 81 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       10 00 00 00  00 00 00 00  00 00 00 0f  69 bc 04 2f
+       00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x00 lun=0 edtl=0 itt=0x10000000 cmd_sn=15 is_write=0 imm_len=0
+  CDB: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_scsi_rsp: itt=0x10000000 scsi_status=0x00 sense_len=0 residual=0 underflow=0 stat_sn=1773929519
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x11000000 cmdsn=16 statsn=1773929520
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       11 00 00 00  00 00 00 20  00 00 00 10  69 bc 04 30
+       9e 10 00 00  00 00 00 00  00 00 00 00  00 20 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x9e lun=0 edtl=32 itt=0x11000000 cmd_sn=16 is_write=0 imm_len=0
+  CDB: 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  READ_CAPACITY_16: num_blocks=0:786432 last_lba=0:786431 block_size=512 alloc=32
+send_data_in: itt=0x11000000 lun=0 data_sn=0 buf_offset=0 len=32 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929520
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x12000000 cmdsn=17 statsn=1773929521
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       12 00 00 00  00 00 00 04  00 00 00 11  69 bc 04 31
+       12 01 b9 00  04 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=4 itt=0x12000000 cmd_sn=17 is_write=0 imm_len=0
+  CDB: 12 01 b9 00 04 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY EVPD page=0xb9 alloc=4 lun=0
+send_scsi_rsp: itt=0x12000000 scsi_status=0x02 sense_len=18 residual=0 underflow=0 stat_sn=1773929521
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x13000000 cmdsn=18 statsn=1773929522
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       13 00 00 00  00 00 00 04  00 00 00 12  69 bc 04 32
+       1a 00 3f 00  04 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x1a lun=0 edtl=4 itt=0x13000000 cmd_sn=18 is_write=0 imm_len=0
+  CDB: 1a 00 3f 00 04 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x13000000 lun=0 data_sn=0 buf_offset=0 len=4 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929522
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x14000000 cmdsn=19 statsn=1773929523
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       14 00 00 00  00 00 00 04  00 00 00 13  69 bc 04 33
+       1a 00 08 00  04 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x1a lun=0 edtl=4 itt=0x14000000 cmd_sn=19 is_write=0 imm_len=0
+  CDB: 1a 00 08 00 04 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x14000000 lun=0 data_sn=0 buf_offset=0 len=4 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929523
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x15000000 cmdsn=20 statsn=1773929524
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       15 00 00 00  00 00 10 00  00 00 00 14  69 bc 04 34
+       28 00 00 00  00 00 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x15000000 cmd_sn=20 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x15000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929524
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x16000000 cmdsn=21 statsn=1773929525
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       16 00 00 00  00 00 10 00  00 00 00 15  69 bc 04 35
+       28 00 00 00  00 08 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x16000000 cmd_sn=21 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 08 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x16000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929525
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x17000000 cmdsn=22 statsn=1773929526
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       17 00 00 00  00 00 10 00  00 00 00 16  69 bc 04 36
+       28 00 00 00  00 18 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x17000000 cmd_sn=22 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 18 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x17000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929526
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x18000000 cmdsn=23 statsn=1773929527
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       18 00 00 00  00 00 00 fe  00 00 00 17  69 bc 04 37
+       12 00 00 00  fe 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=254 itt=0x18000000 cmd_sn=23 is_write=0 imm_len=0
+  CDB: 12 00 00 00 fe 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY standard: alloc=254 lun=0 returning 36 bytes (devtype=0x00 peripheral_qualifier=0x00 version=0x05 response_fmt=0x02 addl_len=0x1f)
+send_data_in: itt=0x18000000 lun=0 data_sn=0 buf_offset=0 len=36 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929527
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x19000000 cmdsn=24 statsn=1773929528
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       19 00 00 00  00 00 00 fe  00 00 00 18  69 bc 04 38
+       12 01 00 00  fe 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=254 itt=0x19000000 cmd_sn=24 is_write=0 imm_len=0
+  CDB: 12 01 00 00 fe 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY EVPD page=0x00 alloc=254 lun=0
+send_data_in: itt=0x19000000 lun=0 data_sn=0 buf_offset=0 len=7 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929528
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x1a000000 cmdsn=25 statsn=1773929529
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       1a 00 00 00  00 00 00 fe  00 00 00 19  69 bc 04 39
+       12 01 80 00  fe 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=254 itt=0x1a000000 cmd_sn=25 is_write=0 imm_len=0
+  CDB: 12 01 80 00 fe 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY EVPD page=0x80 alloc=254 lun=0
+send_data_in: itt=0x1a000000 lun=0 data_sn=0 buf_offset=0 len=12 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929529
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x1b000000 cmdsn=26 statsn=1773929530
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       1b 00 00 00  00 00 00 fe  00 00 00 1a  69 bc 04 3a
+       12 01 83 00  fe 00 00 00  00 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x12 lun=0 edtl=254 itt=0x1b000000 cmd_sn=26 is_write=0 imm_len=0
+  CDB: 12 01 83 00 fe 00 00 00 00 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+  INQUIRY EVPD page=0x83 alloc=254 lun=0
+send_data_in: itt=0x1b000000 lun=0 data_sn=0 buf_offset=0 len=51 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929530
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x1c000000 cmdsn=27 statsn=1773929531
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       1c 00 00 00  00 00 10 00  00 00 00 1b  69 bc 04 3b
+       28 00 00 0b  ff 80 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x1c000000 cmd_sn=27 is_write=0 imm_len=0
+  CDB: 28 00 00 0b ff 80 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x1c000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929531
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x1d000000 cmdsn=28 statsn=1773929532
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       1d 00 00 00  00 00 10 00  00 00 00 1c  69 bc 04 3c
+       28 00 00 0b  ff f0 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x1d000000 cmd_sn=28 is_write=0 imm_len=0
+  CDB: 28 00 00 0b ff f0 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x1d000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929532
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x1e000000 cmdsn=29 statsn=1773929533
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       1e 00 00 00  00 00 10 00  00 00 00 1d  69 bc 04 3d
+       28 00 00 00  00 00 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x1e000000 cmd_sn=29 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x1e000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929533
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x1f000000 cmdsn=30 statsn=1773929534
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       1f 00 00 00  00 00 10 00  00 00 00 1e  69 bc 04 3e
+       28 00 00 00  00 08 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x1f000000 cmd_sn=30 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 08 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x1f000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929534
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x20000000 cmdsn=31 statsn=1773929535
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       20 00 00 00  00 00 10 00  00 00 00 1f  69 bc 04 3f
+       28 00 00 0b  ff f8 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x20000000 cmd_sn=31 is_write=0 imm_len=0
+  CDB: 28 00 00 0b ff f8 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x20000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929535
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x21000000 cmdsn=32 statsn=1773929536
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       21 00 00 00  00 00 10 00  00 00 00 20  69 bc 04 40
+       28 00 00 0b  fe f8 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x21000000 cmd_sn=32 is_write=0 imm_len=0
+  CDB: 28 00 00 0b fe f8 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x21000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929536
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x22000000 cmdsn=33 statsn=1773929537
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       22 00 00 00  00 00 10 00  00 00 00 21  69 bc 04 41
+       28 00 00 0b  ff c0 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x22000000 cmd_sn=33 is_write=0 imm_len=0
+  CDB: 28 00 00 0b ff c0 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x22000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929537
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x23000000 cmdsn=34 statsn=1773929538
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       23 00 00 00  00 00 10 00  00 00 00 22  69 bc 04 42
+       28 00 00 0b  ff 00 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x23000000 cmd_sn=34 is_write=0 imm_len=0
+  CDB: 28 00 00 0b ff 00 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x23000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929538
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x24000000 cmdsn=35 statsn=1773929539
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       24 00 00 00  00 00 10 00  00 00 00 23  69 bc 04 43
+       28 00 00 0b  fe 70 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x24000000 cmd_sn=35 is_write=0 imm_len=0
+  CDB: 28 00 00 0b fe 70 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x24000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929539
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x25000000 cmdsn=36 statsn=1773929540
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       25 00 00 00  00 00 10 00  00 00 00 24  69 bc 04 44
+       28 00 00 0b  fd b0 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x25000000 cmd_sn=36 is_write=0 imm_len=0
+  CDB: 28 00 00 0b fd b0 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x25000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929540
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x26000000 cmdsn=37 statsn=1773929541
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       26 00 00 00  00 00 10 00  00 00 00 25  69 bc 04 45
+       28 00 00 0b  fd 58 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x26000000 cmd_sn=37 is_write=0 imm_len=0
+  CDB: 28 00 00 0b fd 58 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x26000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929541
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x27000000 cmdsn=38 statsn=1773929542
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       27 00 00 00  00 00 10 00  00 00 00 26  69 bc 04 46
+       28 00 00 0b  fd 20 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x27000000 cmd_sn=38 is_write=0 imm_len=0
+  CDB: 28 00 00 0b fd 20 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x27000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929542
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x28000000 cmdsn=39 statsn=1773929543
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       28 00 00 00  00 00 10 00  00 00 00 27  69 bc 04 47
+       28 00 00 0b  fc 70 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x28000000 cmd_sn=39 is_write=0 imm_len=0
+  CDB: 28 00 00 0b fc 70 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x28000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929543
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x29000000 cmdsn=40 statsn=1773929544
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       29 00 00 00  00 00 10 00  00 00 00 28  69 bc 04 48
+       28 00 00 0b  fc 30 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x29000000 cmd_sn=40 is_write=0 imm_len=0
+  CDB: 28 00 00 0b fc 30 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x29000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929544
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x2a000000 cmdsn=41 statsn=1773929545
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       2a 00 00 00  00 00 10 00  00 00 00 29  69 bc 04 49
+       28 00 00 0b  fc 20 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x2a000000 cmd_sn=41 is_write=0 imm_len=0
+  CDB: 28 00 00 0b fc 20 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x2a000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929545
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x2b000000 cmdsn=42 statsn=1773929546
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       2b 00 00 00  00 00 10 00  00 00 00 2a  69 bc 04 4a
+       28 00 00 0b  fc 48 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x2b000000 cmd_sn=42 is_write=0 imm_len=0
+  CDB: 28 00 00 0b fc 48 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x2b000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929546
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x2c000000 cmdsn=43 statsn=1773929547
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       2c 00 00 00  00 00 10 00  00 00 00 2b  69 bc 04 4b
+       28 00 00 0b  f3 f0 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x2c000000 cmd_sn=43 is_write=0 imm_len=0
+  CDB: 28 00 00 0b f3 f0 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x2c000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929547
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x2d000000 cmdsn=44 statsn=1773929548
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       2d 00 00 00  00 00 10 00  00 00 00 2c  69 bc 04 4c
+       28 00 00 00  00 20 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x2d000000 cmd_sn=44 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 20 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x2d000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929548
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x2e000000 cmdsn=45 statsn=1773929549
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       2e 00 00 00  00 00 10 00  00 00 00 2d  69 bc 04 4d
+       28 00 00 00  00 40 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x2e000000 cmd_sn=45 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 40 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x2e000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929549
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x2f000000 cmdsn=46 statsn=1773929550
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       2f 00 00 00  00 00 10 00  00 00 00 2e  69 bc 04 4e
+       28 00 00 00  00 80 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x2f000000 cmd_sn=46 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 80 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x2f000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929550
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x30000000 cmdsn=47 statsn=1773929551
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       30 00 00 00  00 00 10 00  00 00 00 2f  69 bc 04 4f
+       28 00 00 00  01 00 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x30000000 cmd_sn=47 is_write=0 imm_len=0
+  CDB: 28 00 00 00 01 00 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x30000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929551
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x31000000 cmdsn=48 statsn=1773929552
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       31 00 00 00  00 00 10 00  00 00 00 30  69 bc 04 50
+       28 00 00 00  02 00 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x31000000 cmd_sn=48 is_write=0 imm_len=0
+  CDB: 28 00 00 00 02 00 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x31000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929552
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x32000000 cmdsn=49 statsn=1773929553
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       32 00 00 00  00 00 10 00  00 00 00 31  69 bc 04 51
+       28 00 00 00  04 00 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x32000000 cmd_sn=49 is_write=0 imm_len=0
+  CDB: 28 00 00 00 04 00 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x32000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929553
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x33000000 cmdsn=50 statsn=1773929554
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       33 00 00 00  00 00 10 00  00 00 00 32  69 bc 04 52
+       28 00 00 00  08 00 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x33000000 cmd_sn=50 is_write=0 imm_len=0
+  CDB: 28 00 00 00 08 00 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x33000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929554
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x34000000 cmdsn=51 statsn=1773929555
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       34 00 00 00  00 00 10 00  00 00 00 33  69 bc 04 53
+       28 00 00 00  10 00 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x34000000 cmd_sn=51 is_write=0 imm_len=0
+  CDB: 28 00 00 00 10 00 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x34000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929555
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x35000000 cmdsn=52 statsn=1773929556
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       35 00 00 00  00 00 10 00  00 00 00 34  69 bc 04 54
+       28 00 00 00  20 00 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x35000000 cmd_sn=52 is_write=0 imm_len=0
+  CDB: 28 00 00 00 20 00 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x35000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929556
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x36000000 cmdsn=53 statsn=1773929557
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       36 00 00 00  00 00 10 00  00 00 00 35  69 bc 04 55
+       28 00 00 00  00 18 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x36000000 cmd_sn=53 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 18 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x36000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929557
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x37000000 cmdsn=54 statsn=1773929558
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       37 00 00 00  00 00 10 00  00 00 00 36  69 bc 04 56
+       28 00 00 00  00 38 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x37000000 cmd_sn=54 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 38 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x37000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929558
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x38000000 cmdsn=55 statsn=1773929559
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       38 00 00 00  00 00 10 00  00 00 00 37  69 bc 04 57
+       28 00 00 00  00 78 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x38000000 cmd_sn=55 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 78 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x38000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929559
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x39000000 cmdsn=56 statsn=1773929560
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       39 00 00 00  00 00 10 00  00 00 00 38  69 bc 04 58
+       28 00 00 00  00 10 00 00  08 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=4096 itt=0x39000000 cmd_sn=56 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 10 00 00 08 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x39000000 lun=0 data_sn=0 buf_offset=0 len=4096 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929560
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x3a000000 cmdsn=57 statsn=1773929560
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       3a 00 00 00  00 00 20 00  00 00 00 39  69 bc 04 58
+       28 00 00 00  00 28 00 00  10 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=8192 itt=0x3a000000 cmd_sn=57 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 28 00 00 10 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x3a000000 lun=0 data_sn=0 buf_offset=0 len=8192 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929561
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x3b000000 cmdsn=58 statsn=1773929560
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       3b 00 00 00  00 00 60 00  00 00 00 3a  69 bc 04 58
+       28 00 00 00  00 48 00 00  30 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=24576 itt=0x3b000000 cmd_sn=58 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 48 00 00 30 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x3b000000 lun=0 data_sn=0 buf_offset=0 len=24576 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929562
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x3c000000 cmdsn=59 statsn=1773929560
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       3c 00 00 00  00 00 f0 00  00 00 00 3b  69 bc 04 58
+       28 00 00 00  00 88 00 00  78 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=61440 itt=0x3c000000 cmd_sn=59 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 88 00 00 78 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x3c000000 lun=0 data_sn=0 buf_offset=0 len=61440 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929563
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x3d000000 cmdsn=60 statsn=1773929560
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       3d 00 00 00  00 01 f0 00  00 00 00 3c  69 bc 04 58
+       28 00 00 00  01 08 00 00  f8 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=126976 itt=0x3d000000 cmd_sn=60 is_write=0 imm_len=0
+  CDB: 28 00 00 00 01 08 00 00 f8 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x3d000000 lun=0 data_sn=0 buf_offset=0 len=65536 final=0 status_in_last=0 scsi_status=0x00 stat_sn_sent=0
+send_data_in: itt=0x3d000000 lun=0 data_sn=1 buf_offset=65536 len=61440 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929564
+recv_pdu: opcode=0x00 flags=0x80 dsl=0 itt=0x3e000000 cmdsn=61 statsn=1773929563
+  BHS: 40 80 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       3e 00 00 00  ff ff ff ff  00 00 00 3d  69 bc 04 5b
+       00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+handle_nop_out: itt=0x3e000000 ttt=0xffffffff cmd_sn=61 exp_stat_sn=1773929563 (our stat_sn=1773929565)
+handle_nop_out: unsolicited ping, replying with NOP-In (exp_cmd_sn now 62)
+send_nop_in: itt=0x3e000000 ttt=0xffffffff stat_sn=1773929565 (sent, incremented to 1773929566) exp_cmd_sn=62
+recv_pdu: opcode=0x03 flags=0x87 dsl=439 itt=0x00000000 cmdsn=61 statsn=1773929563
+  BHS: 43 87 00 00  00 00 01 b7  00 02 3d 00  00 1d 00 00
+       00 00 00 00  00 00 00 00  00 00 00 3d  69 bc 04 5b
+       00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+login: state=0 T=1 CSG=1 NSG=3 dsl=439
+handle_login: new session (TSIH=0), stat_sn=1773929566 (global counter); initiator ExpStatSN=1773929563 (ignored -- Reserved for TSIH=0)
+login_parse_keys: CSG=1 dsl=439 keys from initiator:
+  [0] 'InitiatorName=iqn.1993-08.org.debian:01:8b30d657b2'
+  [51] 'InitiatorAlias=lenovo-g505'
+  [78] 'TargetName=iqn.homelab:ramdisk'
+  [109] 'SessionType=Normal'
+  [128] 'HeaderDigest=None'
+  [146] 'DataDigest=None'
+  [162] 'DefaultTime2Wait=2'
+  [181] 'DefaultTime2Retain=0'
+  [202] 'IFMarker=No'
+  [214] 'OFMarker=No'
+  [226] 'ErrorRecoveryLevel=0'
+  [247] 'InitialR2T=No'
+  [261] 'ImmediateData=Yes'
+  [279] 'MaxBurstLength=16776192'
+  [303] 'FirstBurstLength=262144'
+  [327] 'MaxOutstandingR2T=1'
+  [347] 'MaxConnections=1'
+  [364] 'DataPDUInOrder=Yes'
+  [383] 'DataSequenceInOrder=Yes'
+  [407] 'MaxRecvDataSegmentLength=262144'
+build_op_keys: advertising InitialR2T=Yes ImmediateData=No MaxRecvDataSegLen(ours)=65536 MaxBurst=262144 FirstBurst=65536 ERL=0
+login: complete (op->full), initiator='iqn.1993-08.org.debian:01:8b30d657b2' target='iqn.homelab:ramdisk'
+login_rsp: T=1 CSG=1 NSG=3 status=00:00 text_len=330 StatSN(wire)=1773929566 ExpCmdSN(wire)=61
+  BHS: 23 87 00 00  00 00 01 4a  00 02 3d 00  00 1d 12 00
+       00 00 00 00  00 00 00 00  69 bc 04 5e  00 00 00 3d
+       00 00 00 5c  00 00 00 00  00 00 00 00  00 00 00 00
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x3f000010 cmdsn=61 statsn=1773929567
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       3f 00 00 10  00 01 f0 00  00 00 00 3d  69 bc 04 5f
+       28 00 00 00  01 08 00 00  f8 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=126976 itt=0x3f000010 cmd_sn=61 is_write=0 imm_len=0
+  CDB: 28 00 00 00 01 08 00 00 f8 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x3f000010 lun=0 data_sn=0 buf_offset=0 len=65536 final=0 status_in_last=0 scsi_status=0x00 stat_sn_sent=0
+send_data_in: itt=0x3f000010 lun=0 data_sn=1 buf_offset=65536 len=61440 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929567
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x40000010 cmdsn=62 statsn=1773929567
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       40 00 00 10  00 00 f0 00  00 00 00 3e  69 bc 04 5f
+       28 00 00 00  00 88 00 00  78 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=61440 itt=0x40000010 cmd_sn=62 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 88 00 00 78 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x40000010 lun=0 data_sn=0 buf_offset=0 len=61440 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929568
+recv_pdu: opcode=0x00 flags=0x80 dsl=0 itt=0x41000010 cmdsn=63 statsn=1773929567
+  BHS: 40 80 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       41 00 00 10  ff ff ff ff  00 00 00 3f  69 bc 04 5f
+       00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+handle_nop_out: itt=0x41000010 ttt=0xffffffff cmd_sn=63 exp_stat_sn=1773929567 (our stat_sn=1773929569)
+handle_nop_out: unsolicited ping, replying with NOP-In (exp_cmd_sn now 64)
+send_nop_in: itt=0x41000010 ttt=0xffffffff stat_sn=1773929569 (sent, incremented to 1773929570) exp_cmd_sn=64
+recv_pdu: opcode=0x03 flags=0x87 dsl=439 itt=0x00000010 cmdsn=63 statsn=1773929567
+  BHS: 43 87 00 00  00 00 01 b7  00 02 3d 00  00 1d 00 00
+       00 00 00 10  00 00 00 00  00 00 00 3f  69 bc 04 5f
+       00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+login: state=0 T=1 CSG=1 NSG=3 dsl=439
+handle_login: new session (TSIH=0), stat_sn=1773929570 (global counter); initiator ExpStatSN=1773929567 (ignored -- Reserved for TSIH=0)
+login_parse_keys: CSG=1 dsl=439 keys from initiator:
+  [0] 'InitiatorName=iqn.1993-08.org.debian:01:8b30d657b2'
+  [51] 'InitiatorAlias=lenovo-g505'
+  [78] 'TargetName=iqn.homelab:ramdisk'
+  [109] 'SessionType=Normal'
+  [128] 'HeaderDigest=None'
+  [146] 'DataDigest=None'
+  [162] 'DefaultTime2Wait=2'
+  [181] 'DefaultTime2Retain=0'
+  [202] 'IFMarker=No'
+  [214] 'OFMarker=No'
+  [226] 'ErrorRecoveryLevel=0'
+  [247] 'InitialR2T=No'
+  [261] 'ImmediateData=Yes'
+  [279] 'MaxBurstLength=16776192'
+  [303] 'FirstBurstLength=262144'
+  [327] 'MaxOutstandingR2T=1'
+  [347] 'MaxConnections=1'
+  [364] 'DataPDUInOrder=Yes'
+  [383] 'DataSequenceInOrder=Yes'
+  [407] 'MaxRecvDataSegmentLength=262144'
+build_op_keys: advertising InitialR2T=Yes ImmediateData=No MaxRecvDataSegLen(ours)=65536 MaxBurst=262144 FirstBurst=65536 ERL=0
+login: complete (op->full), initiator='iqn.1993-08.org.debian:01:8b30d657b2' target='iqn.homelab:ramdisk'
+login_rsp: T=1 CSG=1 NSG=3 status=00:00 text_len=330 StatSN(wire)=1773929570 ExpCmdSN(wire)=63
+  BHS: 23 87 00 00  00 00 01 4a  00 02 3d 00  00 1d 12 00
+       00 00 00 10  00 00 00 00  69 bc 04 62  00 00 00 3f
+       00 00 00 5e  00 00 00 00  00 00 00 00  00 00 00 00
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x42000020 cmdsn=63 statsn=1773929571
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       42 00 00 20  00 00 f0 00  00 00 00 3f  69 bc 04 63
+       28 00 00 00  00 88 00 00  78 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=61440 itt=0x42000020 cmd_sn=63 is_write=0 imm_len=0
+  CDB: 28 00 00 00 00 88 00 00 78 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x42000020 lun=0 data_sn=0 buf_offset=0 len=61440 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929571
+recv_pdu: opcode=0x01 flags=0xc1 dsl=0 itt=0x43000020 cmdsn=64 statsn=1773929571
+  BHS: 01 c1 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       43 00 00 20  00 01 f0 00  00 00 00 40  69 bc 04 63
+       28 00 00 00  01 08 00 00  f8 00 00 00  00 00 00 00
+handle_scsi_cmd: raw LUN field bytes[8-15]=00 00 00 00 00 00 00 00 -> decoded lun=0
+SCSI cmd: opcode=0x28 lun=0 edtl=126976 itt=0x43000020 cmd_sn=64 is_write=0 imm_len=0
+  CDB: 28 00 00 00 01 08 00 00 f8 00 00 00 00 00 00 00
+  target=iqn.homelab:ramdisk backend=ramdisk(384MB)
+send_data_in: itt=0x43000020 lun=0 data_sn=0 buf_offset=0 len=65536 final=0 status_in_last=0 scsi_status=0x00 stat_sn_sent=0
+send_data_in: itt=0x43000020 lun=0 data_sn=1 buf_offset=65536 len=61440 final=1 status_in_last=1 scsi_status=0x00 stat_sn_sent=1773929572
+recv_pdu: opcode=0x00 flags=0x80 dsl=0 itt=0x44000020 cmdsn=65 statsn=1773929572
+  BHS: 40 80 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+       44 00 00 20  ff ff ff ff  00 00 00 41  69 bc 04 64
+       00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00
+handle_nop_out: itt=0x44000020 ttt=0xffffffff cmd_sn=65 exp_stat_sn=1773929572 (our stat_sn=1773929573)
+handle_nop_out: unsolicited ping, replying with NOP-In (exp_cmd_sn now 66)
+send_nop_in: itt=0x44000020 ttt=0xffffffff stat_sn=1773929573 (sent, incremented to 1773929574) exp_cmd_sn=66
+quickiscsi starting on platform: macos
+quickiscsi listening on port 3260
+quickiscsi targets: 3 configured
+server: new connection from 10.0.0.134
+server: session closed
+server: new connection from 10.0.0.134
+server: session closed
+server: new connection from 10.0.0.134
+quickiscsi shutting down
